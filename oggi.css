@@ -1,0 +1,105 @@
+#home-button {
+    background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Georgia;
+  color: #ffffff;
+  font-size: 56px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+#home-button:hover {
+    background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+
+* {cursor: none;}
+
+nav {
+    width: 100%;
+    height: 75px;
+    border-bottom: 2px;
+    border-left: 0px;
+    border-right: 0px;
+    border-top: 0px;
+    border-style: solid;
+    margin-bottom: 15px;
+    background-color: white;
+    position: fixed;
+    top: 0px;
+    padding-top: 13px;
+    text-align: center;
+    z-index: 999;
+}
+
+.ilgiornale {
+    background-color: #BCECC5;
+}
+
+.ilgiornale a h1 {
+    color: #842218;
+    font-size: 110px;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+h1 {
+    font-size: 145px;
+}
+
+body {
+    font-family: 'Open Sans Condensed';
+    font-size: 100px;
+}
+
+p {
+    margin-bottom: 2em;
+    padding-top: .1em;
+    padding-bottom: .1em;
+    padding-left: .2em;
+    padding-right: .2em;
+    border-style: solid;
+    border-width: 2px; 
+}
+.feed-entry {
+    font-weight: 700;
+}
+
+
+
+.contenuto {
+    position: relative;
+    top: 70px;
+}
+
+#wrapper-articolo {
+    position: relative;
+}
+
+hr {
+    height: 250px;
+    background-color: #f00;
+}
+
+img {
+    display: none;
+}
+
+table {
+    width: 100%;
+    font-size: 85px;
+}

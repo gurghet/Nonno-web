@@ -1,0 +1,8 @@
+<nav><a id="home-button" href="#/">Inizio</a></nav>
+<div class="contenuto">
+<div class="tag">
+    <h1 ng-bind-html="tag.name"></h1>
+    <p class="feed-entry" data-ng-repeat="entry in tag.entries"><a data-ng-href="#articolo/{{entry.title}}">{{entry.title}}</a></p>
+    <hr>
+</div>
+</div>

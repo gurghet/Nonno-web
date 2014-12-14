@@ -1,0 +1,38 @@
+<html>
+<head>
+	<title></title>
+    <style type="text/css">
+        body {
+            font-size: 115px;
+            text-align: center;
+            width: 1280px;
+            height: 1080px;
+            }
+        #invisible {
+            display: block;
+            width: 800px;
+            height: 345px;
+            position: absolute;
+            margin-left: auto;
+            margin-right: auto;
+            top: 10px;
+            left: 234px;
+        }
+    </style>
+    <script type="text/javascript">
+    	setInterval(function(){document.getElementById('meteo').contentWindow.location.reload(true);}, 6000)
+    </script>
+</head>
+<body>
+<div id="invisible"></div>
+<!-- Inizio codice ilMeteo.it -->
+<iframe id="meteo" width="800" height="345" scrolling="no" frameborder="no" noresize="noresize" src="http://www.ilmeteo.it/box/previsioni.php?citta=40245&type=real1&width=800&ico=3&lang=ita&days=6&font=Verdana&fontsize=45&bg=FFFFFF&fg=000000&bgtitle=0099FF&fgtitle=FFFFFF&bgtab=F0F0F0&fglink=1773C2"></iframe>
+<!-- Fine codice ilMeteo.it --><br /><br />
+<!--
+<a id="link" href="file:///C:/users/sergio/downloads/oggi.pdf" onclick="this.innerHTML = 'Attendi...'; setTimeout(reset, 15000);">Leggi il giornale di oggi</a>
+-->
+<a id="link" href="http://gurghet.com/static/oggi.html">Leggi il giornale di oggi</a>
+</center>
+    
+</body>
+</html>

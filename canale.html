@@ -1,0 +1,10 @@
+<nav><a id="home-button" href="#/tv">Canali</a></nav>
+<div class="contenuto">
+    <h1>{{canale}}</h1>
+    <ol>
+        <li data-ng-repeat="program in plan">
+            <b>{{program.starttime}}</b> --- {{program.title}}
+        </li>
+    </ol>
+    <hr>
+</div>
