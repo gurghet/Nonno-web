@@ -1,1 +1,5 @@
 AddType application/x-httpd-php .html .htm
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	RewriteCond %{HTTPS} off
+</IfModule>
