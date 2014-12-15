@@ -1,3 +1,10 @@
+<?php
+// можно ограничить домен, для которого доступен ответ
+// header('Access-Control-Allow-Origin: http://javascript.ru');
+   
+header('Access-Control-Allow-Origin: *');
+?>
+
 <html>
 <head>
 	<title></title>
@@ -13,7 +20,7 @@
             width: 800px;
             height: 345px;
             position: absolute;
-            margin-left: auto;
+margin-left: auto;
             margin-right: auto;
             top: 10px;
             left: 234px;
