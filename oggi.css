@@ -50,11 +50,11 @@ nav {
 
 .ilgiornale a h1 {
     color: #842218;
-    font-size: 110px;
+    font-size: 160px;
     width: 100%;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+//    white-space: nowrap;
+//    overflow: hidden;
+//    text-overflow: ellipsis;
 }
 
 h1 {

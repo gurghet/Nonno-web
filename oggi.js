@@ -16,7 +16,7 @@
 	    getEntries: function () {
 		var promise = $http.jsonp(
 		    '//ajax.googleapis.com/ajax/services/feed/load?'
-			+ 'v=1.0&num=100&callback=JSON_CALLBACK&'
+			+ 'v=1.0&num=15&callback=JSON_CALLBACK&'
 			+ 'q=http://www.ilgiornale.it/feed.xml'
 		);
 		return promise;
