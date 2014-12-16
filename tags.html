@@ -4,7 +4,7 @@
       <a href="#/tv"><h1>Guida TV</h1></a>
     </div>
     <div class="ilgiornale" data-ng-repeat="gentry in gentries">
-      <a data-ng-href="#ig/{{$index}}"><h1 ng-bind-html="gentry.title"></h1></a>
+      <a id="gg{{$index}}" data-ng-href="#ig/{{$index}}"><h1 ng-bind-html="gentry.title"></h1></a>
     </div>
     <div class="tag" data-ng-repeat="tag in tags">
       <a data-ng-href="#tag/{{$index}}"><h1 ng-bind-html="tag.name"></h1></a>

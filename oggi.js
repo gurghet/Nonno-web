@@ -6,7 +6,7 @@
     nonnoApp.filter('stripHTML', function() {
         return function(text) {
             return String(text).replace(/<[^>]+>/gm, '');
-        }
+        };
     }
 		   );
     
@@ -87,8 +87,8 @@
     }]);
 
     nonnoApp.controller('FeedController',
-                        ['$scope', '$routeParams', 'fetchFeedFatto', 'fetchFeedIlGiornale',
-                         function ($scope, $routeParams, fetchFeedFatto, fetchFeedIlGiornale) {
+                        ['$scope', '$routeParams', '$anchorScroll', '$location', '$timeout', 'fetchFeedFatto', 'fetchFeedIlGiornale', '$rootScope', '$document',
+                         function ($scope, $routeParams, $anchorScroll, $location, $timeout, fetchFeedFatto, fetchFeedIlGiornale, $rootScope, $document) {
 			     fetchFeedFatto.getTags().then(function (promise) {
 				 var pubtags = promise.data.responseData.pubtags;
 				 $scope.tags = pubtags;
@@ -99,18 +99,26 @@
 			     fetchFeedIlGiornale.getEntries().success(function (data) {
 				 var entries = data.responseData.feed.entries;
 				 $scope.gentries = entries;
+	 			 if (/*route == '/'*/true && $rootScope.scrollPos > 0) {
+				     $timeout(function () {
+					 $location.hash('gg' + $rootScope.scrollPos);
+					 $anchorScroll();
+				     }, 1);
+				 }
+
 			     });
 			 }]);
 
     nonnoApp.controller('ArticoloGiornaleController',
-			['$scope', '$routeParams', 'fetchFeedIlGiornale',
-			 function ($scope, $routeParams, fetchFeedIlGiornale) {
+			['$scope', '$routeParams', 'fetchFeedIlGiornale', '$rootScope',
+			 function ($scope, $routeParams, fetchFeedIlGiornale, $rootScope) {
 			     fetchFeedIlGiornale.getEntries().then(function (promise) {
 				 var gentry,
 				     gentries = promise.data.responseData.feed.entries;
 				 gentry = gentries[$routeParams.index];
 				 $scope.title = gentry.title;
 				 $scope.content = gentry.content;
+				 $rootScope.scrollPos = $routeParams.index; 
 			     });
 			 }]);
     
