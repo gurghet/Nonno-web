@@ -10,7 +10,6 @@
     }
 		   );
     
-
     nonnoApp.factory('fetchFeedIlGiornale', ['$http', function($http) {
 	return {
 	    getEntries: function () {
@@ -87,8 +86,7 @@
     }]);
 
     nonnoApp.controller('FeedController',
-                        ['$scope', '$routeParams', '$anchorScroll', '$location', '$timeout', 'fetchFeedFatto', 'fetchFeedIlGiornale', '$rootScope', '$document',
-                         function ($scope, $routeParams, $anchorScroll, $location, $timeout, fetchFeedFatto, fetchFeedIlGiornale, $rootScope, $document) {
+                        function ($scope, $routeParams, fetchFeedFatto, fetchFeedIlGiornale, $location, $anchorScroll, $timeout, $rootScope) {
 			     fetchFeedFatto.getTags().then(function (promise) {
 				 var pubtags = promise.data.responseData.pubtags;
 				 $scope.tags = pubtags;
@@ -99,15 +97,12 @@
 			     fetchFeedIlGiornale.getEntries().success(function (data) {
 				 var entries = data.responseData.feed.entries;
 				 $scope.gentries = entries;
-	 			 if (/*route == '/'*/true && $rootScope.scrollPos > 0) {
-				     $timeout(function () {
-					 $location.hash('gg' + $rootScope.scrollPos);
-					 $anchorScroll();
-				     }, 1);
-				 }
-
+				 $location.hash($rootScope.lastViewedElement);
+				 $timeout(function () {
+				     $anchorScroll();				     
+				 }, 250);
 			     });
-			 }]);
+			 });
 
     nonnoApp.controller('ArticoloGiornaleController',
 			['$scope', '$routeParams', 'fetchFeedIlGiornale', '$rootScope',
@@ -118,7 +113,7 @@
 				 gentry = gentries[$routeParams.index];
 				 $scope.title = gentry.title;
 				 $scope.content = gentry.content;
-				 $rootScope.scrollPos = $routeParams.index; 
+				 $rootScope.lastViewedElement = "gg" + $routeParams.index; 
 			     });
 			 }]);
     
@@ -141,8 +136,8 @@
             }]);
     
     nonnoApp.controller('TvController',
-                        ['$scope', '$routeParams', '$http',
-             function ($scope, $routeParams, $http) {
+                        ['$scope', '$routeParams', '$http', '$rootScope',
+			 function ($scope, $routeParams, $http, $rootScope) {
                  var nomeCanale = [
 					'Questo canale non esiste',
                      'Rai Uno',
