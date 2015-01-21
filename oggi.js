@@ -9,6 +9,12 @@
         };
     }
 		   );
+
+    nonnoApp.filter('stripnbsp', function() {
+	return function(text) {
+	    return String(text).replace(/&nbsp;/, ' ');
+	};
+    });
     
     nonnoApp.factory('fetchFeedIlGiornale', ['$http', function($http) {
 	return {
