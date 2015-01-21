@@ -12,7 +12,7 @@
 
     nonnoApp.filter('stripnbsp', function() {
 	return function(text) {
-	    return String(text).replace(/&nbsp;/g, ' ');
+	    return String(text).replace(/&/g, 'bubu ');
 	};
     });
     
